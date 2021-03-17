@@ -1,0 +1,25 @@
+\documentclass{article}
+\title{CP3 Ecuaciones exactas y reducibles a exactas}
+\author{Javier Alejandro Oramas López C212}
+
+\begin{document}
+    
+    \section{Resuelva las siguientes ecuaciones diferenciales:}
+        \subsection{$(1 + ye^{xy})dx + (2y + xe^{xy})dy = 0$}
+            Verificamos si es una ecuación diferencial exacta:
+            \[ \frac{d(1+ye^{xy})}{dy} = e^{xy} + xye^{xy}\]
+            \[ \frac{d(2y+xe^{xy})}{dx} = e^{xy} + xye^{xy}\]
+            Calculamos la INtegral
+
+            \[\int 1+ye^{xy} dx = x+e^{xy} + g(y) \]
+            \[\frac{d(x+e^{xy}+g(y))}{dy} = xe^{xy}+g^{'}(y)\]
+
+            igualamos a M
+            \[xe^{xy}+g^{'}(y) = xe^{xy} +2y\]
+            \[g^{'}(y) = 2y\]
+            \[g(x) = y^2\]
+
+            Sustituimos en el resultado de la integral e igualamos a la constante
+            \[x+xe^{xy}+y^2 = C\]
+
+\end{document}
