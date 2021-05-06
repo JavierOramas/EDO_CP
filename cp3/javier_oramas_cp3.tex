@@ -21,5 +21,30 @@
 
             Sustituimos en el resultado de la integral e igualamos a la constante
             \[x+xe^{xy}+y^2 = C\]
+        \subsection{$\frac{ydx-xdy}{y^2}+xdx = 0$}
+            Multiplicamos por $y^2$ en ambos miebros
+            \[ydx-xdy+y^2xdx = 0\]
+            \[(y+y^2x)dx -xdy = 0\]
+
+            Hallando las derivadas parciales
+            \[M_y = 1+2xy\]
+            \[N_x = -1\]
+
+            Como no son iguales tenemos que hallar un factor de integración para convertir la ecuación en exacta
+            \[\frac{M_y-N_x}{N} = \frac{1+2xy+1}{-x} = \frac{2+2yx}{-x}\]
+            \[\frac{N_x-M_y}{M} = \frac{-1-1-2yx}{y+y^2x} = \frac{-2-2yx}{y+y^2x}\]
+
+            Como no quedan funciónes en función de x o y respectivamente tenemos que recurrir al metodo
+            \[M_y-N_x= m \frac{N}{x} - n \frac{M}{y}\]
+
+            \[1+2xy-1 = m \frac{-x}{x} - n \frac{y_y^2x}{y}\]
+            \[2xy = -m -n (1+xy)\]
+            \[2xy = -m-n-nxy\]
+
+
+            \[n = -2\]
+            \[m = -n = 2\]
+
+            $x^2+y^-2$ Es el factor de integración 
 
 \end{document}

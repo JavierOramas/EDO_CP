@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\title{Ecuaciones diferenciales ordinarias. Tarea I}
+\author{
+    Kevin Talavera Díaz C211\\
+    Lía Zerquera Ferrer C212\\
+    Javier Alejandro Oramas López C212\\
+    Daniel Alejandro Cárdenas C213\\
+    }
+\date{}
+
+\begin{document}
+    \maketitle
+
+    \section{Demuestre el siguiente Teorema de existencia y Unicidad:\\
+        Sea $Q = \left\{ (x,y) | a < x < b, c < y < d \right\}$ y las funciones $f_{1}(x),f_{2}(y)$ definidas y continuas en Q, 
+        de modo que $f_2 \not= 0, \forall y \in (c,d)$. Entonces, por cada punto $ (x_0, y_0) \in Q $ pasa una y solo una curva 
+        integral de la ecuación $\frac{\delta y}{\delta x} = f_{1}(x)f_{2}(y)$}
+
+        \[\frac{\delta y}{\delta x} = f_1(x)f_2(y) | dividimos por f_2(y), f_2(y) \not = 0  \]
+        \[\frac{1}{f_2(y)}\frac{\delta y}{\delta x} = f_1(x)\]
+
+        \[\int \frac{1}{f_2(x)} \delta y = \int f_1(x) \delta x\]
+        
+        Como $f_2(y)$ es continuam $\frac{1}{f_2(y)}$ es continua
+        
+        Como $\frac{1}{f_2(y)}$ y $f_1(x)$ son continuas, son también integrables
+
+        Como $\frac{1}{f_2(y)}$ y $f_1(x)$ son integrables, existe $F_2(y), F_1(x)$ primitivas, 
+        tal que $ \int \frac{1}{f_2(y)} dy = F_2(y) + c_1$ y $ \int f_1(x) dx =  F_1(x) +c_2$ 
+
+        Luego
+
+        \[\int \frac{1}{f_2(y)} dy = \int f_1(x) dx \]
+        \[F_2(y) + c_1 = F_1(x) + c_2\]
+        \[c_1 - c_2 = F_1(x) - F_2(y) \]
+        \[ C = F_1(x) - F_2(y) \]
+        Obteniendo así la solución general
+
+        Sabemos que pasa por el punto $(x_0, y_0)$ por lo tanto podemos particularizar la 
+        solución evaluando en $F_1$ y $F_2$
+
+        \[C = F_1(x_0)-F_2(y_0)\]
+
+        Luego, $F_1(x_0)$ y $F_2(y_0)$ son únicos porque la evaluación de una función en un valor fijo es único
+
+        Luego C es único por ser resta de valores únicos
+
+        Luego, Queda demostrado que por cada punto $ (x_0, y_0) \in Q $ pasa una y solo una curva 
+        integral de la ecuación $\frac{\delta y}{\delta x} = f_{1}(x)f_{2}(y)$
+    \section{Ejercicio 21 página 81}
+
+        \subsection{Datos de Interés}
+        \begin{enumerate}
+            \item Máxima capacidad del tanque: 500 gal
+            \item Tanque lleno de Agua Pura $\Rightarrow$ x(0) = 0 y c(0) = 0
+            \item Concentración de sal de entrada: 2 lb/gal
+            \item Velocidad de Entrada de Salmuera: 5 gal/min
+            \item Concentración de sal de salida: 2 lb/gal
+            \item Velocidad de salida de Salmuera: 5 gal/min
+            \item Tasa de entrada de sal: (2 lb/gal)(5 gal/min) 10 lb/min
+            \item Tasa de salida de sal: ($\frac{x}{500}$ lb/gal)(5 gal/min) $\frac{x}{100}$ lb/gal  
+        \end{enumerate}
+
+        Planteemos el ejercicio como un problema de valor inicial
+
+        \begin{equation}
+            \frac{\delta x}{\delta t} + \frac{x}{100} = 10; x(0) = 0
+        \end{equation}
+
+        Sabemos que (1) es una ecuación diferencial linela, y su factor de integración es: $e^{\frac{t}{100}}$, luego:
+
+        \begin{equation}
+            \frac{\delta e^{\frac{t}{100}}}{\delta t} = 10 e^{\frac{t}{100}}
+        \end{equation}
+
+        integrando y resolviendo para x tenemos:
+
+        \[ x(t) = 1000 + c e^{-\frac{t}{100}} ; x(0) = 0\]
+        \[0 = 1000+c\]
+        \[c = 1000\]
+
+        \begin{center}
+            \framebox{$x(t) = 1000 - 1000 e^{-\frac{t}{100}}$}
+        \end{center}
+    
+    \section{Ejercicio 22 página 81}
+        
+        \subsection{¿Cuál es la concentración de sal $c(t)$ en el tanque en el tiempo t?}
+            De la fórmula de la concentración $c = \frac{Ms}{Vd}$ donde Ms representa la masa 
+            de soluto y Vd el volúmen de la disolución.\\ 
+            Definimos la concenttración de Sal en el tiempo t como:
+            \begin{equation}
+                c(t) = \frac{x(t)}{500}
+            \end{equation}
+        \subsection{¿En t=5 min?}
+            Sustituyendo en (3)
+            \[ c(5) = \frac{x(5)}{500} \]
+            \[ c(5) = \frac{1000-1000e^{-\frac{5}{100}}}{500} \]
+            \[ c(5) = \frac{1000(1-e^{-\frac{1}{20}})}{500} \]
+            \begin{center}
+                \framebox{$c(5) \approx 48.77058$}
+            \end{center}
+    
+        \subsection{¿Cuál es
+        la concentración de sal en el tanque después de un largo
+        tiempo, es decir cuando t → q ?}
+
+            \[ \lim_{t \to \infty} x(t) * \frac{1}{500} \]
+            \[ \lim_{t \to \infty} \frac{1000-1000e^{-\frac{5}{100}}}{500} \]
+
+            Cuando $t \to \infty$, $e^{-\frac{5}{100}} = 0$, luego:
+
+            \[ \lim_{t \to \infty} x(t) * \frac{1}{500} = \frac{1000}{500} = 2 \]
+                
+            Luego, la concentración pasado un largo período será de 2 lb/gal
+        \subsection{¿En qué tiempo la concentración de sal en el tanque es igual a la mitad de este
+        valor límite?}
+
+        \[  \frac{x(t)}{500} = 1\]
+        \[ x(t) = 500\]
+        \[ 1000-1000e^{-\frac{5}{100}} = 500 \]
+        \[ -1000e^{-\frac{5}{100}} = -500 \]
+        \[ 500e^{-\frac{5}{100}} = 1 \]
+        \[  e^{-\frac{5}{100}} = \frac{1}{500} \]
+        \[ \frac{t}{100} = \ln(500) \]
+        \begin{center}
+            \framebox{$t = 100\ln(500)$}
+        \end{center}
+
+\end{document}
